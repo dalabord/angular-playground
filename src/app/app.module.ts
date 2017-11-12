@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AdqUsersModule } from './adq-users/adq-users.module';
-import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { AdqUsersComponent } from './adq-users/adq-users.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -18,6 +19,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    AdqUsersComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,8 +29,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    AdqUsersModule,
-    PageNotFoundModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
